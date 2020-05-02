@@ -4,6 +4,7 @@ data class LocalShopDTO(
     val shopId: String = "",
     val localShopName: String = "",
     val localShopResume: String = "",
+    val localShopCategory: String = "",
     val localShopAddress: String = "",
     val localShopPhone: String = "",
     val localShopLatitude: Float = 0f,
