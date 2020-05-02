@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -28,9 +29,36 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    def appCompat = "1.1.0"
+    def room_version = "2.2.5"
+    def kotlin_ktx = "1.2.0"
+    def auto_value_version = "1.6.2"
+    def retrofit_version = "2.5.0"
+    def testRunner = "1.1.1"
+    def espresso = "3.2.0"
+    def jUnit = "4.12"
+    def okHttpVersion = "3.9.+"
+    def moshiVersion = "1.5.+"
+    def moshiLazyAdapterVersion = "2.1"
+    def jwtVersion = "3.8.0"
+
+    implementation "androidx.appcompat:appcompat:$appCompat"
+    implementation "androidx.core:core-ktx:$kotlin_ktx"
+    api "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    api "com.google.auto.value:auto-value-annotations:$auto_value_version"
+    kapt "com.google.auto.value:auto-value:$auto_value_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshiVersion"
+    implementation "com.serjltt.moshi:moshi-lazy-adapters:$moshiLazyAdapterVersion"
+    implementation "com.auth0:java-jwt:$jwtVersion"
+    implementation project(':domain')
+
+    testImplementation "junit:junit:$jUnit"
+    androidTestImplementation "androidx.test.ext:junit:$testRunner"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }
