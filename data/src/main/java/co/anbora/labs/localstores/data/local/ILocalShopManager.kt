@@ -8,6 +8,8 @@ interface ILocalShopManager {
 
     fun getLocalShops(categoryId: String): Flow<List<LocalShopBo>>
 
+    fun getAllLocalShops(): Flow<List<LocalShopBo>>
+
     fun saveLocalShops(response: List<LocalShopDTO>)
 
 }

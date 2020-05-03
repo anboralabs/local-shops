@@ -11,4 +11,6 @@ interface IRepository {
 
     fun getLocalShopsByCategory(categoryId: String): Flow<Result<List<LocalShopBo>>>
 
+    fun getAllLocalShops(): Flow<List<LocalShopBo>>
+
 }

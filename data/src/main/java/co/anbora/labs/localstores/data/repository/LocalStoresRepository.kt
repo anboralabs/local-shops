@@ -44,4 +44,6 @@ class LocalStoresRepository(
             override suspend fun fetchFromRemote(): Response<List<LocalShopDTO>> = remoteDataSource.localShops(categoryId)
         }.asFlow().flowOn(Dispatchers.IO)
     }
+
+    override fun getAllLocalShops(): Flow<List<LocalShopBo>> = localShopManager.getAllLocalShops()
 }
