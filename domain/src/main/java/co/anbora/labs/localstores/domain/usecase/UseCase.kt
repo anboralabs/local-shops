@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.iosched.shared.domain
+package co.anbora.labs.localstores.domain.usecase
 
-import com.google.samples.apps.iosched.shared.result.Result
+import co.anbora.labs.localstores.domain.result.Result
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
-import timber.log.Timber
 
 /**
  * Executes business logic synchronously or asynchronously using Coroutines.
@@ -43,7 +42,6 @@ abstract class UseCase<in P, R>(private val coroutineDispatcher: CoroutineDispat
                 }
             }
         } catch (e: Exception) {
-            Timber.d(e)
             Result.Error(e)
         }
     }
