@@ -2,7 +2,6 @@ package co.anbora.labs.localstores.data.local.inventory
 
 import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
 import co.anbora.labs.localstores.data.local.dao.CategoryDAO
 import co.anbora.labs.localstores.data.local.dao.LocalShopsDAO
@@ -11,6 +10,7 @@ import co.anbora.labs.localstores.data.local.migrations.DatabaseMigrations
 import co.anbora.labs.localstores.data.local.model.CategoryVO
 import co.anbora.labs.localstores.data.local.model.LocalShopVO
 import co.anbora.labs.localstores.data.local.model.ShopImagesVO
+import co.anbora.labs.spatia.builder.SpatiaRoom
 
 @Database(
     entities = [CategoryVO::class, LocalShopVO::class, ShopImagesVO::class],
@@ -37,7 +37,7 @@ abstract class AppDatabase :RoomDatabase() {
             }
 
             synchronized(this) {
-                val instance = Room.databaseBuilder(
+                val instance = SpatiaRoom.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
                     DB_NAME
