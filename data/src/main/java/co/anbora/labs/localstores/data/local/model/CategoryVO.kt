@@ -20,7 +20,7 @@ data class CategoryVO (
     @ColumnInfo(name = COLUMN_REMOTE_IMAGE)
     val urlRemoteImage: String,
     @ColumnInfo(name = COLUMN_LOCAL_IMAGE, defaultValue = "")
-    val urlLocalImageSync: String
+    val urlLocalImageSync: String = ""
 ) {
 
     companion object {
@@ -31,5 +31,13 @@ data class CategoryVO (
         const val COLUMN_DESCRIPTION = "category_description"
         const val COLUMN_REMOTE_IMAGE = "category_remote_image"
         const val COLUMN_LOCAL_IMAGE = "category_local_image"
+    }
+
+    fun getImage(): String {
+        return if (urlLocalImageSync.isNotEmpty()) {
+            urlLocalImageSync
+        } else {
+            urlRemoteImage
+        }
     }
 }
