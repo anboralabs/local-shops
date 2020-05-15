@@ -7,6 +7,7 @@ import co.anbora.labs.localstores.data.remote.model.CategoryDTO
 import co.anbora.labs.localstores.data.remote.model.LocalShopDTO
 import co.anbora.labs.localstores.domain.model.CategoryBo
 import co.anbora.labs.localstores.domain.model.LocalShopBo
+import co.anbora.labs.localstores.domain.model.LocationBo
 import co.anbora.labs.localstores.domain.repository.IRepository
 import co.anbora.labs.localstores.domain.result.Result
 import kotlinx.coroutines.Dispatchers
@@ -44,6 +45,8 @@ class LocalStoresRepository(
             override suspend fun fetchFromRemote(): Response<List<LocalShopDTO>> = remoteDataSource.localShops(categoryId)
         }.asFlow().flowOn(Dispatchers.IO)
     }
+
+    override fun getAllNearestShops(location: LocationBo): List<LocalShopBo> = localShopManager.getAllNearestShopsFrom(location)
 
     override fun getAllLocalShops(): Flow<List<LocalShopBo>> = localShopManager.getAllLocalShops()
 }
