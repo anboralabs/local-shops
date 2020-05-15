@@ -14,6 +14,4 @@ interface IRepository {
 
     fun getAllNearestShops(location: LocationBo): List<LocalShopBo>
 
-    fun getAllLocalShops(): Flow<List<LocalShopBo>>
-
 }

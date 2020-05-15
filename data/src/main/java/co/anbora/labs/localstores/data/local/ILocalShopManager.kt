@@ -11,8 +11,6 @@ interface ILocalShopManager {
 
     fun getAllNearestShopsFrom(location: LocationBo): List<LocalShopBo>
 
-    fun getAllLocalShops(): Flow<List<LocalShopBo>>
-
     fun saveLocalShops(response: List<LocalShopDTO>)
 
 }

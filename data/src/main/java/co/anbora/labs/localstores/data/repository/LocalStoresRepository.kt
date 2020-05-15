@@ -22,6 +22,7 @@ class LocalStoresRepository(
     private val localShopManager: ILocalShopManager,
     private val remoteDataSource: LocalShopsService
 ) : IRepository {
+
     override fun getCategories(): Flow<Result<List<CategoryBo>>> {
         return object : NetworkBoundRepository<List<CategoryBo>, List<CategoryDTO>>() {
             override suspend fun saveRemoteData(response: List<CategoryDTO>) {
@@ -48,5 +49,4 @@ class LocalStoresRepository(
 
     override fun getAllNearestShops(location: LocationBo): List<LocalShopBo> = localShopManager.getAllNearestShopsFrom(location)
 
-    override fun getAllLocalShops(): Flow<List<LocalShopBo>> = localShopManager.getAllLocalShops()
 }
