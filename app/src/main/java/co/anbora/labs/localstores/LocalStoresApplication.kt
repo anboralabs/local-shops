@@ -1,4 +1,11 @@
 package co.anbora.labs.localstores
 
-class LocalStoresApplication {
+import co.anbora.labs.localstores.internal.injection.DaggerApplication
+
+class LocalStoresApplication: DaggerApplication() {
+
+    override fun onCreate() {
+        super.onCreate()
+
+    }
 }

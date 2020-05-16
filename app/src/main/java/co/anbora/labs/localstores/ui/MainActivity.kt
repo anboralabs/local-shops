@@ -1,15 +1,15 @@
 package co.anbora.labs.localstores.ui
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import co.anbora.labs.localstores.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.android.support.DaggerAppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_dashboard,
             R.id.navigation_notifications
         ))
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        setupActionBarWithNavController(this, navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 }
