@@ -3,17 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_dashboard">
+    app:startDestination="@+id/navigation_categories">
+
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="co.anbora.labs.localstores.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_categories"
+        android:name="co.anbora.labs.localstores.ui.category.CategoriesFragment"
+        android:label="categories_fragment"
+        tools:layout="@layout/categories_fragment" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="co.anbora.labs.localstores.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_stores"
+        android:name="co.anbora.labs.localstores.ui.stores.StoresFragment"
+        android:label="stores_fragment"
+        tools:layout="@layout/stores_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="co.anbora.labs.localstores.ui.map.MapFragment"
+        android:label="map_fragment"
+        tools:layout="@layout/map_fragment" />
 </navigation>
