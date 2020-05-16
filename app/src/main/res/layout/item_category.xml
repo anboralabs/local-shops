@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    style="@style/Card">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <FrameLayout
+    <data>
+        <variable
+            name="category"
+            type="co.anbora.labs.localstores.domain.model.ICategory" />
+    </data>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        style="@style/Card">
 
-        <ImageView
-            style="@style/CardPhoto"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/photo" />
+            android:layout_height="match_parent">
 
-        <TextView
-            style="@style/CardTitle"
-            android:id="@+id/category_name"
-            android:text="Pacifica Pier" />
+            <ImageView
+                style="@style/CardPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:imageUrl="@{category.image()}"
+                android:id="@+id/photo" />
 
-    </FrameLayout>
+            <TextView
+                style="@style/CardTitle"
+                android:id="@+id/category_name"
+                android:text="@{category.name()}" />
 
-</androidx.cardview.widget.CardView>
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
