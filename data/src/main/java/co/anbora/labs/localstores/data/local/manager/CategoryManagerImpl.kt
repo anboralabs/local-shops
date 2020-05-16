@@ -5,7 +5,7 @@ import co.anbora.labs.localstores.data.local.dao.CategoryDAO
 import co.anbora.labs.localstores.data.local.mapper.ListCategoryMapper
 import co.anbora.labs.localstores.data.remote.mapper.ListCategoryDTOMapper
 import co.anbora.labs.localstores.data.remote.model.CategoryDTO
-import co.anbora.labs.localstores.domain.model.CategoryBo
+import co.anbora.labs.localstores.domain.model.impl.CategoryBo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

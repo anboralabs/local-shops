@@ -1,6 +1,6 @@
 package co.anbora.labs.localstores.domain.usecase.shops
 
-import co.anbora.labs.localstores.domain.model.LocalShopBo
+import co.anbora.labs.localstores.domain.model.impl.LocalShopBo
 import co.anbora.labs.localstores.domain.model.LocationBo
 import co.anbora.labs.localstores.domain.repository.IRepository
 import co.anbora.labs.localstores.domain.usecase.SuspendUseCase

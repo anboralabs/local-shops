@@ -1,6 +1,6 @@
 package co.anbora.labs.localstores.domain.usecase.categories
 
-import co.anbora.labs.localstores.domain.model.CategoryBo
+import co.anbora.labs.localstores.domain.model.impl.CategoryBo
 import co.anbora.labs.localstores.domain.repository.IRepository
 import co.anbora.labs.localstores.domain.result.Result
 import co.anbora.labs.localstores.domain.usecase.FlowUseCase

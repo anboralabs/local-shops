@@ -2,7 +2,7 @@ package co.anbora.labs.localstores.data.local.mapper
 
 import androidx.arch.core.util.Function
 import co.anbora.labs.localstores.data.local.model.CategoryVO
-import co.anbora.labs.localstores.domain.model.CategoryBo
+import co.anbora.labs.localstores.domain.model.impl.CategoryBo
 
 class ListCategoryMapper(
     private val categoryMapper: Function<CategoryVO, CategoryBo>

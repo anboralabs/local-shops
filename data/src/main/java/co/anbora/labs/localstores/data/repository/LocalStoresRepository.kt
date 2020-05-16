@@ -4,8 +4,8 @@ import co.anbora.labs.localstores.data.local.RoomDataSource
 import co.anbora.labs.localstores.data.remote.ApiDataSource
 import co.anbora.labs.localstores.data.remote.model.CategoryDTO
 import co.anbora.labs.localstores.data.remote.model.LocalShopDTO
-import co.anbora.labs.localstores.domain.model.CategoryBo
-import co.anbora.labs.localstores.domain.model.LocalShopBo
+import co.anbora.labs.localstores.domain.model.impl.CategoryBo
+import co.anbora.labs.localstores.domain.model.impl.LocalShopBo
 import co.anbora.labs.localstores.domain.model.LocationBo
 import co.anbora.labs.localstores.domain.repository.IRepository
 import co.anbora.labs.localstores.domain.result.Result

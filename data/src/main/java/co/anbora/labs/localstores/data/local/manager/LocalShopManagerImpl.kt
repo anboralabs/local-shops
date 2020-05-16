@@ -2,7 +2,7 @@ package co.anbora.labs.localstores.data.local.manager
 
 import co.anbora.labs.localstores.data.local.ILocalShopManager
 import co.anbora.labs.localstores.data.remote.model.LocalShopDTO
-import co.anbora.labs.localstores.domain.model.LocalShopBo
+import co.anbora.labs.localstores.domain.model.impl.LocalShopBo
 import co.anbora.labs.localstores.domain.model.LocationBo
 import kotlinx.coroutines.flow.Flow
 

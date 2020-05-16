@@ -1,8 +1,8 @@
 package co.anbora.labs.localstores.domain.repository
 
 import co.anbora.labs.localstores.domain.result.Result
-import co.anbora.labs.localstores.domain.model.CategoryBo
-import co.anbora.labs.localstores.domain.model.LocalShopBo
+import co.anbora.labs.localstores.domain.model.impl.CategoryBo
+import co.anbora.labs.localstores.domain.model.impl.LocalShopBo
 import co.anbora.labs.localstores.domain.model.LocationBo
 import kotlinx.coroutines.flow.Flow
 
