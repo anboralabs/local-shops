@@ -11,9 +11,10 @@ import co.anbora.labs.localstores.adapters.ListBindingAdapter
 import co.anbora.labs.localstores.databinding.CategoriesFragmentBinding
 import co.anbora.labs.localstores.domain.model.ICategory
 import co.anbora.labs.localstores.internal.util.lazyThreadSafetyNone
+import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-class CategoriesFragment : Fragment(), ListBindingAdapter.Callbacks<ICategory> {
+class CategoriesFragment : DaggerFragment(), ListBindingAdapter.Callbacks<ICategory> {
 
     @Inject
     protected lateinit var viewModelFactory: ViewModelProvider.Factory
