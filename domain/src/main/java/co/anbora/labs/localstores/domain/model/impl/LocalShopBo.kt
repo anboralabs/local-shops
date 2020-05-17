@@ -1,4 +1,6 @@
 package co.anbora.labs.localstores.domain.model.impl
 
-class LocalShopBo {
+import co.anbora.labs.localstores.domain.model.ILocalShop
+
+class LocalShopBo: ILocalShop {
 }

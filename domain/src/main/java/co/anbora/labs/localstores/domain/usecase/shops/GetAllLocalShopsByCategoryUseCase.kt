@@ -7,7 +7,7 @@ import co.anbora.labs.localstores.domain.usecase.FlowUseCase
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 
-class GetAllLocalShopsByCategory(
+class GetAllLocalShopsByCategoryUseCase(
     private val repository: IRepository,
     defaultDispatcher: CoroutineDispatcher
 ): FlowUseCase<GetLocalShopsByCategoryParameters, List<LocalShopBo>>(defaultDispatcher) {

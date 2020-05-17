@@ -12,10 +12,6 @@ import dagger.android.support.DaggerFragment
 
 class StoresFragment : DaggerFragment() {
 
-    companion object {
-        fun newInstance() = StoresFragment()
-    }
-
     private lateinit var viewModel: StoresViewModel
 
     override fun onCreateView(
