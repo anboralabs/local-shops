@@ -42,20 +42,21 @@ dependencies {
     def okHttpVersion = "3.9.+"
     def moshiVersion = "1.9.2"
     def moshiLazyAdapterVersion = "2.1"
-    def jwtVersion = "3.8.0"
 
     implementation "androidx.appcompat:appcompat:$appCompat"
     implementation "androidx.core:core-ktx:$kotlin_ktx"
+    //Room
     implementation "androidx.room:room-ktx:$room_version"
     api "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
     implementation "com.github.anboralabs:spatia-room:$spatia_room"
+    //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
     implementation "com.squareup.moshi:moshi-kotlin:$moshiVersion"
     implementation "com.serjltt.moshi:moshi-lazy-adapters:$moshiLazyAdapterVersion"
-    implementation "com.auth0:java-jwt:$jwtVersion"
+
     implementation project(':domain')
 
     testImplementation "junit:junit:$jUnit"
