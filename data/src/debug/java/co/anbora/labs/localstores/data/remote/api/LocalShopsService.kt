@@ -8,10 +8,10 @@ import retrofit2.http.Path
 
 interface LocalShopsService {
 
-    @GET("/categories")
+    @GET("/categories.json")
     suspend fun categories(): Response<List<CategoryDTO>>
 
-    @GET("/{categoryId}/shops")
+    @GET("/{categoryId}/shops.json")
     suspend fun localShops(@Path("categoryId") categoryId: String): Response<List<LocalShopDTO>>
 
 }

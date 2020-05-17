@@ -1,5 +1,8 @@
 package co.anbora.labs.localstores.internal.injection.module
 
+import android.content.Context
+import co.anbora.labs.localstores.data.local.AssetFileReader
+import co.anbora.labs.localstores.data.local.reader.AssetReader
 import co.anbora.labs.localstores.data.remote.ApiDataSource
 import co.anbora.labs.localstores.data.remote.api.LocalShopAPI
 import co.anbora.labs.localstores.data.remote.api.LocalShopsService
@@ -18,7 +21,13 @@ internal class RemoteDataSourceModule {
 
     @Provides
     @Singleton
-    internal fun provideLocalShopsService(): LocalShopsService = LocalShopAPI("http://127.0.0.1/")
+    internal fun provideAssetReader(context: Context): AssetFileReader = AssetReader(context)
+
+    @Provides
+    @Singleton
+    internal fun provideLocalShopsService(
+        assetFileReader: AssetFileReader
+    ): LocalShopsService = LocalShopAPI("http://127.0.0.1/", assetFileReader)
 
     @Provides
     @Singleton

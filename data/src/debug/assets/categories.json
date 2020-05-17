@@ -1,0 +1,14 @@
+[
+  {
+    "categoryId": "de987d39-9219-46f4-b484-41b70e0ea1eb",
+    "categoryName": "Tiendas",
+    "categoryDescription": "Todas las tiendas locales",
+    "imageCategory": "https://image.freepik.com/vector-gratis/fachada-tienda-plana-toldo_23-2147542588.jpg"
+  },
+  {
+    "categoryId": "b8857b07-77e9-474a-948d-63af9c2ede51",
+    "categoryName": "Panaderias",
+    "categoryDescription": "Todas las panaderias locales",
+    "imageCategory": "https://image.freepik.com/foto-gratis/hornear-pan-delicioso-panaderia_109285-3764.jpg"
+  }
+]
