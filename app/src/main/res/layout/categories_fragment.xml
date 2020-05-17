@@ -22,7 +22,8 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_8"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
+            app:callback="@{callback}"
+            app:categories="@{viewModel.categories}"
             tools:listitem="@layout/item_category"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
