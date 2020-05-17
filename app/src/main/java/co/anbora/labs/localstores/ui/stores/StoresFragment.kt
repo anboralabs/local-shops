@@ -8,8 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 
 import co.anbora.labs.localstores.R
+import dagger.android.support.DaggerFragment
 
-class StoresFragment : Fragment() {
+class StoresFragment : DaggerFragment() {
 
     companion object {
         fun newInstance() = StoresFragment()
