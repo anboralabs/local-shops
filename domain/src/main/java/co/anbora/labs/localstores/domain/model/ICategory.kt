@@ -1,6 +1,8 @@
 package co.anbora.labs.localstores.domain.model
 
-interface ICategory {
+import java.io.Serializable
+
+interface ICategory: Serializable {
 
     fun id(): String
 

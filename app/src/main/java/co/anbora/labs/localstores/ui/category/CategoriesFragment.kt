@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 
 import co.anbora.labs.localstores.adapters.ListBindingAdapter
 import co.anbora.labs.localstores.databinding.CategoriesFragmentBinding
@@ -44,7 +45,8 @@ class CategoriesFragment : DaggerFragment(), ListBindingAdapter.Callbacks<ICateg
     }
 
     override fun onItemClick(view: View, item: ICategory) {
-
+        val action = CategoriesFragmentDirections.toStores(item)
+        this.findNavController().navigate(action)
     }
 
 }

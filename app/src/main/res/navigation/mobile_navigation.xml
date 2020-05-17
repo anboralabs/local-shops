@@ -10,13 +10,23 @@
         android:id="@+id/navigation_categories"
         android:name="co.anbora.labs.localstores.ui.category.CategoriesFragment"
         android:label="categories_fragment"
-        tools:layout="@layout/categories_fragment" />
+        tools:layout="@layout/categories_fragment" >
+        <action
+            android:id="@+id/to_stores"
+            app:destination="@id/navigation_stores"/>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_stores"
         android:name="co.anbora.labs.localstores.ui.stores.StoresFragment"
         android:label="stores_fragment"
-        tools:layout="@layout/stores_fragment" />
+        tools:layout="@layout/stores_fragment" >
+        <argument
+            android:name="category"
+            app:argType="co.anbora.labs.localstores.domain.model.ICategory"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_map"
