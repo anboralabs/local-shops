@@ -4,11 +4,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import co.anbora.labs.localstores.domain.repository.IRepository
 import co.anbora.labs.localstores.domain.usecase.categories.GetAllCategoriesUseCase
+import co.anbora.labs.localstores.domain.usecase.shops.GetAllLocalShopsByCategoryUseCase
 import co.anbora.labs.localstores.internal.injection.scope.MainScope
 import co.anbora.labs.localstores.ui.category.CategoriesFragment
 import co.anbora.labs.localstores.ui.category.CategoriesViewModel
 import co.anbora.labs.localstores.ui.map.MapFragment
 import co.anbora.labs.localstores.ui.stores.StoresFragment
+import co.anbora.labs.localstores.ui.stores.StoresViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.android.ContributesAndroidInjector
@@ -39,8 +41,16 @@ internal abstract class LocalShopsModule {
         @MainScope
         @Provides
         @JvmStatic
+        internal fun provideGetAllLocalShopsByCategoryUseCase(repository: IRepository): GetAllLocalShopsByCategoryUseCase {
+            return GetAllLocalShopsByCategoryUseCase(repository, Dispatchers.Default)
+        }
+
+        @MainScope
+        @Provides
+        @JvmStatic
         internal fun provideViewModelFactory(
-            getAllCategoriesUseCase: GetAllCategoriesUseCase
+            getAllCategoriesUseCase: GetAllCategoriesUseCase,
+            getAllLocalShopsByCategoryUseCase: GetAllLocalShopsByCategoryUseCase
         ): ViewModelProvider.Factory {
             @Suppress("UNCHECKED_CAST")
             return object: ViewModelProvider.Factory {
@@ -48,6 +58,9 @@ internal abstract class LocalShopsModule {
                     return when {
                         modelClass.isAssignableFrom(CategoriesViewModel::class.java) ->
                             CategoriesViewModel(getAllCategoriesUseCase) as T
+
+                        modelClass.isAssignableFrom(StoresViewModel::class.java) ->
+                            StoresViewModel(getAllLocalShopsByCategoryUseCase) as T
 
                         else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
                     }
