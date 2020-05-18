@@ -10,10 +10,12 @@ import co.anbora.labs.localstores.data.local.migrations.DatabaseMigrations
 import co.anbora.labs.localstores.data.local.model.CategoryVO
 import co.anbora.labs.localstores.data.local.model.LocalShopVO
 import co.anbora.labs.localstores.data.local.model.ShopImagesVO
+import co.anbora.labs.localstores.data.local.view.LocalShopFullView
 import co.anbora.labs.spatia.builder.SpatiaRoom
 
 @Database(
     entities = [CategoryVO::class, LocalShopVO::class, ShopImagesVO::class],
+    views = [LocalShopFullView::class],
     version = DatabaseMigrations.DB_VERSION
 )
 abstract class AppDatabase :RoomDatabase() {

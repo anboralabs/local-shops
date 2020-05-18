@@ -1,0 +1,17 @@
+[
+  {
+    "shopId": "60cf6f59-82b3-4f84-aabb-394c7eeaa043",
+    "localShopName": "Tiendas Ara baranoa centro",
+    "localShopResume": "Encuentra los mejores productos de los supermercados ARA y disfruta de nuestro rebajón en mercado cada jueves. Carnes, frutas y mucho más.",
+    "localShopCategory": "de987d39-9219-46f4-b484-41b70e0ea1eb",
+    "localShopAddress": "Cl. 17 #18 - 02",
+    "localShopPhone": "01-800-0521888",
+    "localShopSchedule": {
+      "startTime": "08:00",
+      "endTime": "21:00"
+    },
+    "localShopLatitude": 10.796187,
+    "localShopLongitude": -74.915695,
+    "localShopImages": []
+  }
+]

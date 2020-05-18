@@ -7,6 +7,7 @@ data class LocalShopDTO(
     val localShopCategory: String = "",
     val localShopAddress: String = "",
     val localShopPhone: String = "",
+    val localShopSchedule: ScheduleDTO = ScheduleDTO(),
     val localShopLatitude: Float = 0f,
     val localShopLongitude: Float = 0f,
     val localShopImages: List<String> = arrayListOf()
