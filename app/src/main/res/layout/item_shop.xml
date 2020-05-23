@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shop"
+            type="co.anbora.labs.localstores.domain.model.ILocalShop" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_normal">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/margin_normal" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/margin_normal" />
+
+            <!-- Title below header: shown if there is a photo header or video. -->
+            <TextView
+                android:id="@+id/session_detail_with_video_title"
+                style="@style/Widget.IOSched.SessionDetailTitle"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_normal"
+                android:text="@{viewModel.session.title}"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toTopOf="parent"
+                app:goneUnless="@{viewModel.hasPhotoOrVideo}"
+                tools:text="Session Title" />
+
+            <TextView
+                android:id="@+id/session_detail_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:textColor="?android:textColorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/session_detail_with_video_title"
+                app:layout_goneMarginTop="24dp"
+                app:sessionDetailEndTime="@{viewModel.session.endTime}"
+                app:sessionDetailStartTime="@{viewModel.session.startTime}"
+                app:timeZoneId="@{viewModel.timeZoneId}"
+                tools:text="Tue, May 8, 2:00 - 3:00 PM" />
+
+            <TextView
+                android:id="@+id/session_detail_room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_micro"
+                android:text="@{viewModel.session.room.name}"
+                android:textColor="?android:textColorPrimary"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toTopOf="@id/session_detail_countdown_barrier"
+                app:layout_constraintEnd_toStartOf="@id/session_detail_recorded"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/session_detail_time"
+                tools:text="Stage 8" />
+
+            <ImageView
+                android:id="@+id/session_detail_recorded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_micro"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toTopOf="@id/session_detail_countdown_barrier"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/session_detail_room"
+                app:layout_constraintTop_toBottomOf="@id/session_detail_time"
+                app:goneUnless="@{viewModel.session.isLivestream}"
+                app:srcCompat="@drawable/ic_livestreamed" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/session_detail_countdown_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="session_detail_room,session_detail_recorded" />
+
+            <TextView
+                android:id="@+id/session_detail_countdown_timer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_micro"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/session_detail_countdown_barrier"
+                app:sessionStartCountdown="@{viewModel.timeUntilStart}"
+                tools:text="Starts in 5 minutes" />
+
+            <TextView
+                android:id="@+id/session_detail_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@{viewModel.session.abstract}"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/session_detail_countdown_timer"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et mauris blandit, porttitor leo sit amet, tincidunt tellus. Proin at rutrum risus. Sed volutpat tellus  " />
+
+            <Button
+                android:id="@+id/session_detail_rate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:text="@string/rate_session"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/session_detail_description"
+                app:goneUnless="@{viewModel.showRateButton}"
+                tools:text="Rate Session" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

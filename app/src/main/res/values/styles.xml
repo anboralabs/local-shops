@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -38,6 +38,22 @@
         <item name="android:paddingBottom">8dp</item>
 
         <item name="android:background">?android:selectableItemBackground</item>
+    </style>
+
+    <style name="TextAppearance.IOSched.SessionTitle.Display" parent="@style/TextAppearance.AppCompat.Display1">
+        <item name="android:fontFamily">@font/google_sans</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="Widget.IOSched" parent="@android:style/Widget" />
+
+    <style name="Widget.IOSched.SessionDetailTitle">
+        <item name="android:gravity">start|bottom</item>
+        <item name="android:textAppearance">@style/TextAppearance.IOSched.SessionTitle.Display</item>
+        <item name="android:breakStrategy" tools:targetApi="m">balanced</item>
+        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeMaxTextSize">34sp</item>
     </style>
 
 </resources>
