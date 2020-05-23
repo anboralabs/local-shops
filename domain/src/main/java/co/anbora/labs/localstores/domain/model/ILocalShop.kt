@@ -20,6 +20,14 @@ interface ILocalShop {
 
     fun longitude(): Float
 
+    fun image(): String {
+        return if (images().isNotEmpty()) {
+            images().first()
+        } else {
+            ""
+        }
+    }
+
     fun images(): List<String>
 
 }
