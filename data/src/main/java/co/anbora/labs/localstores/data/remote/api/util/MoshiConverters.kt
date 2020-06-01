@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package co.anbora.evaluacion.docente.data.remote.api.util
+package co.anbora.labs.localstores.data.remote.api.util
 
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson

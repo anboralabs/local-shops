@@ -67,6 +67,9 @@ dependencies {
     //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    //Carto Map
+    implementation 'com.carto:carto-mobile-sdk:4.2.2@aar'
+
     //Dagger
     implementation 'com.google.dagger:dagger-android:2.27'
     implementation 'com.google.dagger:dagger-android-support:2.27'

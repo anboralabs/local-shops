@@ -1,6 +1,6 @@
 package co.anbora.labs.localstores.data.remote.api
 
-import co.anbora.evaluacion.docente.data.remote.api.util.MoshiConverters
+import co.anbora.labs.localstores.data.remote.api.util.MoshiConverters
 import co.anbora.labs.localstores.data.local.AssetFileReader
 import co.anbora.labs.localstores.data.remote.model.CategoryDTO
 import co.anbora.labs.localstores.data.remote.model.LocalShopDTO
